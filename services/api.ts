@@ -16,10 +16,6 @@ export const api: AxiosInstance = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    // const authToken = 'meu-token-de-autenticacao'; // Meu token
-    // if (authToken) {
-    //   config.headers['Authorization'] = `Bearer ${authToken}`;
-    // }
     return config;
   },
   (error) => {
