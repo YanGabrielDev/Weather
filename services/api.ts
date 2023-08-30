@@ -23,17 +23,20 @@ api.interceptors.request.use(
   }
 );
 
+
 api.interceptors.response.use(
   (response: AxiosResponse) => {
     return response;
   },
   (error) => {
-    if (error.response) {
-      console.error('Erro de resposta:', error.response.data);
-    } else if (error.request) {
-      console.error('Erro de requisição:', error.request);
+    const {response, request, message} = error
+
+    if (response) {
+      console.error('Erro de resposta:', response.data);
+    } else if (request) {
+      console.error('Erro de requisição:', request);
     } else {
-      console.error('Erro:', error.message);
+      console.error('Erro:', message);
     }
     return Promise.reject(error);
   }
