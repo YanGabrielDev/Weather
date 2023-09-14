@@ -5,6 +5,6 @@ export const lightTheme: DefaultTheme = {
         main: "#fff",
         text: "#1e1e1f",
         secondaryMain: "#d4d4d4",
-        primary: "#0062ff"
+        primary: "#5193fd"
     }
 }
