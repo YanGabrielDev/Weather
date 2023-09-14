@@ -1,8 +1,7 @@
-import { getWeatherForecast } from "../services/restApiService";
+import { restApiProvider } from "../services/restApiService";
 import { useEffect, useState } from "react";
 export const useWeather = () => {
   const [data, setdata] = useState();
-
   const loadWeather = async () => {
     
     const position =  await new Promise<GeolocationPosition>( (resolve, reject) =>{
@@ -15,7 +14,7 @@ export const useWeather = () => {
     console.log(position);
     
       
-    const response = await getWeatherForecast({
+    const response = await restApiProvider.getWeatherForecast({
       cnt: 7,
       lat: lat,
       lon: long,
