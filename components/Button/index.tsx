@@ -1,11 +1,14 @@
 import { ComponentProps, ReactNode } from "react"
+import { Container } from "./styles"
 
-interface ButtonProps extends ComponentProps<"button">{
+export interface ButtonProps extends ComponentProps<"button">{
     children: ReactNode,
-    rounded?: string
+    color?: "primary" | "secondaty";
+    fontSize?: "small" | "medium" | "large";
+    rounded?: "full" | "medium"
 }
-export const Button = ({children, rounded,...rest}: ButtonProps) => {
+export const Button = ({children, color, fontSize,rounded,...rest}: ButtonProps) => {
     return(
-        <button {...rest}>{children}</button>
+        <Container color={color} fontSize={fontSize}  rounded={rounded} {...rest}>{children}</Container>
     )
 }
