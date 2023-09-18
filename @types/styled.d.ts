@@ -6,13 +6,18 @@ declare module 'styled-components'{
         main: string,
         text: string,
         secondaryMain: string,
+        background: string,
         primary: string,
+        gray: string
     }
     font?:{
+            family:{
+                poppins: string
+            }
         sizes: {
-            small: "0.5rem",
-            medium: "1rem",
-            large: "1.5rem"
+            small: string,
+            medium: string,
+            large: string
         }
     }
  }
