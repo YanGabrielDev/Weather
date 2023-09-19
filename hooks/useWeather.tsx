@@ -11,8 +11,9 @@ export const useWeather = () => {
     const lat = position.coords.latitude
     const long = position.coords.longitude
 
-    console.log(position);
-    
+    if(!lat && !long){
+       alert("Localização desativada, ative para obter as informações meteorológicas da sua localização!")
+    }    
       
     const response = await restApiProvider.getWeatherForecast({
       cnt: 7,
