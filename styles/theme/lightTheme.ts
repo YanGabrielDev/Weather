@@ -13,7 +13,7 @@ export const lightTheme: DefaultTheme = {
         text: "#1e1e1f",
         secondaryMain: "#d4d4d4",
         primary: "#5193fd",
-        gray: "#b1b0b0fa"
+        gray: "#7f7e83"
     },
     font:{
         family:{

@@ -10,12 +10,12 @@ export const poppins = Poppins({
 
 export const darkTheme: DefaultTheme = {
     colors:{
-        main: "#101112",
+        main: "#1e1e1e",
         background: "#101112",
         text: "#fff",
         secondaryMain: "#202224",
         primary: "#7dd7ff",
-        gray: "#b5b5b5ab"
+        gray: "#7f7e83"
     },
     font:{
         family:{
