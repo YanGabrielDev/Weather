@@ -1,12 +1,17 @@
 import { MapPin } from "lucide-react"
 import { LocationContainer, LocationDetails } from "./styles"
 
-export const Location = () => {
+interface LocationProps {
+  city: string
+  country: string
+}
+
+export const Location = ({city, country}: LocationProps) => {
     return(
         <LocationContainer>
         <MapPin />
         <LocationDetails>
-          <span className="city">Belo Horizone</span>, <span className="state">Minas Gerais</span>
+          <span className="city">{city}</span>, <span className="country">{country}</span>
         </LocationDetails>
         </LocationContainer>
     )

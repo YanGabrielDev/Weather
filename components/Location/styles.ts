@@ -9,14 +9,20 @@ ${({theme}) =>css`
   font-weight: 500;
   font-size: ${theme.font?.sizes.small};
 
-  span.state{
-    color: #303030;
+  svg{
+    color: ${theme.colors.text}
   }
+  
 `}
 `
 export const LocationDetails = styled.div`
 ${({theme}) => css`
- span.state{
+
+span.city{
+   color: ${theme.colors.text}
+  }
+
+ span.country{
     color: ${theme.colors.gray};
   }
 `}`
