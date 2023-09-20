@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import {useWeather} from '../hooks/useWeather'
+import Head from "next/head";
+import { useWeather } from "../hooks/useWeather";
 
 export default function Home() {
-const {data} = useWeather()
-
+  const { data, hours } = useWeather();
+  const currentday = data?.list
+ 
   return (
     <>
       <Head>
@@ -13,10 +13,11 @@ const {data} = useWeather()
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
-
-        
-      </main>
+      <div>
+        <div>
+          <p>{hours}</p>
+        </div>
+      </div>
     </>
-  )
+  );
 }
