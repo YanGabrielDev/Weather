@@ -4,7 +4,7 @@ export const Container = styled.header`
 ${({theme}) => css`
 display: flex;
 align-items: center;
-padding: 1rem;
+padding: 1.25rem;
 justify-content: space-between;
 `}
 `

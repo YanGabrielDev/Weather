@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { useWeather } from "../hooks/useWeather";
+import { CurrentDayContainer } from "./styles";
 
 export default function Home() {
   const { data, hours } = useWeather();
-  const currentday = data?.list
+  const weatherList = data?.list
+  
  
   return (
     <>
@@ -14,9 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div>
+        <CurrentDayContainer>
           <p>{hours}</p>
-        </div>
+        </CurrentDayContainer>
       </div>
     </>
   );
