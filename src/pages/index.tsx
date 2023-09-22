@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { useWeather } from "../hooks/useWeather";
 import { CurrentDayContainer } from "./styles";
+import { useFormat } from "../hooks/useFormat";
 
 export default function Home() {
-  const { data, hours } = useWeather();
+  const { data, hours, isLoading } = useWeather();
+  const {formatTimestamp} = useFormat()
   const weatherList = data?.list
   
  
@@ -15,11 +17,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {isLoading ? "carregando" : (
       <div>
         <CurrentDayContainer>
+          <span>{formatTimestamp(weatherList[0].dt)}</span>
           <p>{hours}</p>
         </CurrentDayContainer>
       </div>
+      )}
     </>
   );
 }
