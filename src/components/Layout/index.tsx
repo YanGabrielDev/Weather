@@ -11,6 +11,7 @@ interface LayoutProps{
 export const Layout = ({darkMode, handleChangeTheme, children}: LayoutProps) => {
   return (
     <>
+      <Container>
       <Header>
         <Location city="Belo Horizonte" country="BR"/>
         <TextField placeholder="Procure a cidade..." />
@@ -18,7 +19,6 @@ export const Layout = ({darkMode, handleChangeTheme, children}: LayoutProps) => 
           {darkMode ? <Moon /> : <Sun />}
         </Button>
       </Header>
-      <Container>
         {children}
       </Container>
     </>
