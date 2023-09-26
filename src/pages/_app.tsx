@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme } from "../styles/theme/darkTheme";
 import { lightTheme } from "../styles/theme/lightTheme";
 import { useState } from "react";
-import { Layout } from "../components";
+import {Layout } from "../components";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState<boolean>(false);
