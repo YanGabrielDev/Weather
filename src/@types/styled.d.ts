@@ -12,7 +12,8 @@ declare module 'styled-components'{
     }
     font?:{
             family:{
-                poppins: string
+                poppins: string,
+                roboto: string
             }
         sizes: {
             small: string,
