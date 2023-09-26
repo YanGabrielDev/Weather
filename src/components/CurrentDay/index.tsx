@@ -1,5 +1,6 @@
 import { useFormat } from "../../hooks/useFormat";
 import { WeatherForecastList } from "../../interfaces/Weather.interface";
+import { renderWeatherIcon } from "../../utils/renderWeatherIcon";
 import {
   DetailsContainer,
   CurrentDayContainer,
@@ -17,7 +18,7 @@ export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
   const { dt, main, weather, clouds } = currentDay;
   const day = formatTimestamp(dt);
   const temp = main.temp.toFixed();
-  const image = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+  const icon = renderWeatherIcon(weather[0].icon)
 
   return (
     <CurrentDayContainer>
@@ -26,7 +27,7 @@ export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
       </CurrentDayMain>
       <CurrentDayMain>
         <span className="temp">{temp}°</span>
-        <img src={image} />
+        <img src={icon} />
       </CurrentDayMain>
       <CurrentDayContent>
         <CurrentDayDetails>
