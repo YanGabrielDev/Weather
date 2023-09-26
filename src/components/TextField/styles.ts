@@ -22,7 +22,8 @@ export const InputText = styled.input`
     color: ${theme.colors.text};
     outline: none;
     background-color: transparent;
-    font-family: ${theme.font?.family.poppins};
+    font-family: ${theme.font?.family.roboto};
+    font-weight: 300;
     font-size: ${theme.font?.sizes.medium};
     width: 100%;
   `}
