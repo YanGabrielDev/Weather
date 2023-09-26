@@ -46,7 +46,8 @@ export const Container = styled.button<ButtonProps>`
 
     svg{
         width: 22px;
-        height: 30px;
+        height: 22px;
+        margin: 0.5rem
     }
   `}
 `;
