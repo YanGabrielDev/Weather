@@ -5,8 +5,8 @@ ${({theme}) =>css`
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  font-family: ${theme.font?.family.poppins};
-  font-weight: 500;
+  font-family: ${theme.font?.family.roboto};
+  font-weight: 300;
   font-size: ${theme.font?.sizes.small};
 
   svg{
