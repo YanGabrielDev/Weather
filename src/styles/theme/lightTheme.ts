@@ -1,11 +1,19 @@
 import { DefaultTheme } from "styled-components";
-import { Poppins } from "@next/font/google";
+import { Poppins, Roboto } from "@next/font/google";
 
 export const poppins = Poppins({
     weight: "500",
     style: "normal",
     subsets: ["latin"]
 })
+
+export const roboto = Roboto({
+    weight: ["300", "500"],
+    style: "normal",
+    subsets: ["latin"]
+})
+
+
 export const lightTheme: DefaultTheme = {
     colors:{
         main: "#fff",
@@ -17,7 +25,8 @@ export const lightTheme: DefaultTheme = {
     },
     font:{
         family:{
-            poppins: poppins.style.fontFamily
+            poppins: poppins.style.fontFamily,
+            roboto: roboto.style.fontFamily
         },
         sizes: {
             small: "0.875rem",
