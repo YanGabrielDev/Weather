@@ -9,7 +9,6 @@ export const api: AxiosInstance = axios.create({
     appid: process.env.NEXT_PUBLIC_WEATHER_KEY,
     lang: "pt_br",
     units: "metric",
-
   }
 })
 

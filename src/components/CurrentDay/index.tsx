@@ -15,9 +15,8 @@ interface CurrentDayParams {
 }
 export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
   const { formatTimestamp } = useFormat();
-  const { dt, main, weather, clouds } = currentDay;
+  const { dt, feels_like ,weather, clouds, humidity, temp } = currentDay;
   const day = formatTimestamp(dt);
-  const temp = main.temp.toFixed();
   const icon = renderWeatherIcon(weather[0].icon)
 
   return (
@@ -26,32 +25,32 @@ export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
         <span className="day">{day}</span>
       </CurrentDayMain>
       <CurrentDayMain>
-        <span className="temp">{temp}°</span>
+        <span className="temp">{temp.day.toFixed()}°</span>
         <img src={icon} />
       </CurrentDayMain>
       <CurrentDayContent>
         <CurrentDayDetails>
           <DetailsContainer>
             <span className="datails-label">Sensação termica:</span>
-            <span className="datails">{main.feels_like.toFixed()}°</span>
+            <span className="datails">{feels_like.day.toFixed()}°</span>
           </DetailsContainer>
           <DetailsContainer>
             <span className="datails-label">Humidade:</span>
-            <span className="datails">{main.humidity}%</span>
+            <span className="datails">{humidity}%</span>
           </DetailsContainer>
           <DetailsContainer>
             <span className="datails-label">Nuvens:</span>
-            <span className="datails">{clouds.all}</span>
+            <span className="datails">{clouds}</span>
           </DetailsContainer>
         </CurrentDayDetails>
         <CurrentDayDetails>
           <DetailsContainer>
             <span className="datails-label">Temperatura max:</span>
-            <span className="datails">{main.temp_max.toFixed()}°</span>
+            <span className="datails">{temp.max.toFixed()}°</span>
           </DetailsContainer>
           <DetailsContainer>
             <span className="datails-label">Temperatura min:</span>
-            <span className="datails">{main.temp_min.toFixed()}°</span>
+            <span className="datails">{temp.min.toFixed()}°</span>
           </DetailsContainer>
         </CurrentDayDetails>
       </CurrentDayContent>
