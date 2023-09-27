@@ -21,11 +21,14 @@ export const CurrentDayContent = styled.div`
     background-color: transparent;
     justify-content: space-between;
 
-    @media (max-width: 650px) {\
-        flex-direction: column;
-        max-width: 186px;
+    @media (max-width: 650px) {
+      max-width: 430px;
     }
-  `}
+    @media (max-width: 440px) {
+      flex-direction: column;
+      max-width: 186px;
+    }
+    `}
 `;
 export const CurrentDayMain = styled.div`
   ${({ theme }) => css`
