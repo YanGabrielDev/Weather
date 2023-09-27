@@ -40,7 +40,7 @@ export const useWeather = () => {
       const position = await loadCurrentPosition();
       if (position) {
         const response: WeatherResponse =
-          await restApiProvider.getWeatherForecast({
+          await restApiProvider.getWeatherDaily({
             cnt: 7,
             lat: position.lat,
             lon: position.long,

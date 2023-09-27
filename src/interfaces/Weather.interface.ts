@@ -1,4 +1,4 @@
-export interface GetWeatherForecastParams {
+export interface GetWeatherDailyParams {
   cnt?: number;
   q?: string;
   lat?: number;
@@ -22,7 +22,7 @@ export interface WeatherResponse {
   cnt: number;
   cod: string;
   name: string;
-  list: WeatherForecastList[];
+  list: WeatherDailyList[];
 }
 
 export interface Weather {
@@ -32,7 +32,7 @@ export interface Weather {
   main: string;
 }
 
-export interface WeatherForecastList {
+export interface WeatherDailyList {
   clouds: number;
   dt: number;
   dt_txt: string;
