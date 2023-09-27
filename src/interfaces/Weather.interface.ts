@@ -1,5 +1,5 @@
 export interface GetWeatherForecastParams {
-  cnt: number;
+  cnt?: number;
   q?: string;
   lat?: number;
   lon?: number;
@@ -21,6 +21,7 @@ export interface WeatherResponse {
   };
   cnt: number;
   cod: string;
+  name: string;
   list: WeatherForecastList[];
 }
 
@@ -32,14 +33,11 @@ export interface Weather {
 }
 
 export interface WeatherForecastList {
-  clouds: {
-    all: number;
-  };
+  clouds: number;
   dt: number;
   dt_txt: string;
-  main: {
-    temp: number;
-    feels_like: number;
+    temp: Temp;
+    feels_like: FeelsLike;
     temp_min: number;
     temp_max: number;
     pressure: number;
@@ -47,11 +45,26 @@ export interface WeatherForecastList {
     humidity: number;
     sea_level: number;
     temp_kf: number;
-  };
   weather: Weather[];
   wind: {
     deg: number;
     gust: number;
     speed: number;
   };
+}
+
+export interface Temp{
+day: number;
+eve: number;
+max: number;
+min: number;
+morn: number;
+night: number;
+}
+
+export interface FeelsLike{
+day: number;
+eve: number;
+morn: number;
+night: number;
 }
