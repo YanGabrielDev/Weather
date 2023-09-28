@@ -46,12 +46,12 @@ color: ${theme.colors.text};
 export const ForecastTemp = styled.span`
 ${({theme}) =>css`
 font-family: ${theme.font?.family.roboto};
-font-size: 1.25rem;
+font-size: 1.5rem;
 `}
 `
 export const ForecastDay = styled.span`
 ${({theme}) =>css`
 font-family: ${theme.font?.family.roboto};
-font-size: 1.5rem;
+font-size: 1.25rem;
 `}
 `
