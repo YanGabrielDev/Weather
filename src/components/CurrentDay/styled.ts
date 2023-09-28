@@ -50,6 +50,23 @@ export const CurrentDayMain = styled.div`
       font-size: 1.75rem;
       text-transform: capitalize;
     }
+
+    span.city{
+    font-family: ${theme.font?.family.roboto};
+    font-weight: 500;
+    font-size: 1.875rem;
+    }
+
+    span.country{
+    font-family: ${theme.font?.family.roboto};
+    font-weight: 500;
+    font-size: 1.875rem;
+    }
+
+    svg{
+      height: 2rem;
+      width: 2rem;
+    }
   `}
 `;
 
