@@ -1,5 +1,5 @@
 import { useFormat } from "../../hooks/useFormat";
-import { WeatherForecastList } from "../../interfaces/Weather.interface";
+import { WeatherDailyList } from "../../interfaces/Weather.interface";
 import { renderWeatherIcon } from "../../utils/renderWeatherIcon";
 import {
   DetailsContainer,
@@ -8,19 +8,27 @@ import {
   CurrentDayContent,
   CurrentDayMain,
 } from "./styled";
+import {Location} from '../'
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 interface CurrentDayParams {
-  currentDay: WeatherForecastList;
+  currentDay: WeatherDailyList;
   hours: string;
 }
 export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
   const { formatTimestamp } = useFormat();
+  const matchLocation = useMediaQuery('(max-width: 700px)')
   const { dt, feels_like ,weather, clouds, humidity, temp } = currentDay;
   const day = formatTimestamp(dt);
   const icon = renderWeatherIcon(weather[0].icon)
 
   return (
     <CurrentDayContainer>
+      {matchLocation && (
+      <CurrentDayMain>
+        <Location city="Belo Horizonte" country="BR"/>
+      </CurrentDayMain>
+      )}
       <CurrentDayMain>
         <span className="day">{day}</span>
       </CurrentDayMain>
