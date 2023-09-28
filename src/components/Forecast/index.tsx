@@ -1,10 +1,10 @@
-import { WeatherForecastList } from "../../interfaces/Weather.interface";
+import { WeatherDailyList } from "../../interfaces/Weather.interface";
 import * as Styled from "./styled";
 import { useFormat } from "../../hooks/useFormat";
 import { renderWeatherIcon } from "../../utils/renderWeatherIcon";
 
 interface ForecastParams {
-  forecast: WeatherForecastList[];
+  forecast: WeatherDailyList[];
 }
 export const Forecast = ({ forecast }: ForecastParams) => {
   const { formatTimestamp } = useFormat();
