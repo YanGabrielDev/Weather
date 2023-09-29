@@ -8,3 +8,12 @@ flex-direction: column;
 
 `}
 `
+export const LoaderContainer = styled.div`
+${({theme}) =>css`
+display: flex;
+width: 100%;
+height: 50vh;
+justify-content: center;
+align-items: center;
+`}
+`
