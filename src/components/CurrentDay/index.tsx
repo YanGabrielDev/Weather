@@ -13,9 +13,8 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 interface CurrentDayParams {
   currentDay: WeatherDailyList;
-  hours: string;
 }
-export const CurrentDay = ({ currentDay, hours }: CurrentDayParams) => {
+export const CurrentDay = ({ currentDay }: CurrentDayParams) => {
   const { formatTimestamp } = useFormat();
   const matchLocation = useMediaQuery('(max-width: 700px)')
   const { dt, feels_like ,weather, clouds, humidity, temp } = currentDay;
