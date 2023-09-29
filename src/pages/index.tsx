@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { useWeather } from "../hooks/useWeather";
-import { CurrentDay } from "../components/CurrentDay";
-import { Forecast } from "../components/Forecast";
-import { WeatherContainer } from "./styles";
+import { CurrentDay } from "../components";
+import { Forecast } from "../components";
+import { LoaderContainer, WeatherContainer } from "./styles";
+import { useWeatherContext } from "../hooks/useWeather";
+import { Loader } from "../components";
 
 export default function Home() {
-  const { data, hours, isLoading } = useWeather();
+  const { data, isLoading } = useWeatherContext();
   const weatherList = data?.list
   
   return (
@@ -16,9 +17,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isLoading ? (<h1>Carregando</h1>) : (
+      {isLoading ? (<LoaderContainer><Loader/></LoaderContainer>) : (
         <>
-        <CurrentDay currentDay={weatherList[0]} hours={hours}/>
+        <CurrentDay currentDay={weatherList[0]} />
       <Forecast forecast={weatherList}/>
         </>
       )}
