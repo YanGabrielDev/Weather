@@ -6,19 +6,7 @@ export interface GetWeatherDailyParams {
 }
 
 export interface WeatherResponse {
-  city: {
-    coord: {
-      lat: number;
-      lon: number;
-    };
-    country: string;
-    id: number;
-    name: string;
-    population: number;
-    sunrise: number;
-    sunset: number;
-    timezone: number;
-  };
+  city: WeatherCity;
   cnt: number;
   cod: string;
   name: string;
@@ -67,4 +55,18 @@ day: number;
 eve: number;
 morn: number;
 night: number;
+}
+
+export interface WeatherCity{
+    coord: {
+      lat: number;
+      lon: number;
+    };
+    country: string;
+    id: number;
+    name: string;
+    population: number;
+    sunrise: number;
+    sunset: number;
+    timezone: number;
 }
