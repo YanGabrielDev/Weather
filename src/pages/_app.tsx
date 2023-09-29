@@ -5,6 +5,7 @@ import { darkTheme } from "../styles/theme/darkTheme";
 import { lightTheme } from "../styles/theme/lightTheme";
 import { useState } from "react";
 import {Layout } from "../components";
+import { WeatherProvider } from "../contexts/Weather";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -13,13 +14,13 @@ export default function App({ Component, pageProps }: AppProps) {
     setDarkMode(!darkMode);
   };
   return (
-    <>
+    <WeatherProvider>
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Layout darkMode={darkMode} handleChangeTheme={handleChangeTheme}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
-    </>
+    </WeatherProvider>
   );
 }
